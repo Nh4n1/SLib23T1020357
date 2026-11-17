@@ -14,7 +14,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Properties\Loan\" />
-	  <Folder Include="Properties\Member\" />
 	  <Folder Include="Properties\System\" />
 	</ItemGroup>
 	<ItemGroup>

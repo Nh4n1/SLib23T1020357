@@ -10,6 +10,7 @@ public static class ServiceManager
     private static PublisherService _publisher;
     private static MemberTypeService _memberType;
     private static LocationService _location;
+    private static MemberService _member;
 
     /// <summary>
     /// Khởi tạo các đối tượng nghiệp vụ
@@ -18,12 +19,15 @@ public static class ServiceManager
     /// <param name="connectionString"></param>
     public static void Initialize(string connectionString)
     {
+        var memberTypeRepo = new MemberTypeRepository(connectionString);
+        var memberRepo = new MemberRepository(connectionString);
         _author = new AuthorService(new AuthorRepository(connectionString));
         _category = new CategoryService(new CategoryRepository(connectionString));
         _language = new LanguageService(new LanguageRepository(connectionString));
         _publisher = new PublisherService(new PublisherRepository(connectionString));
         _memberType = new MemberTypeService(new MemberTypeRepository(connectionString));
         _location = new LocationService(new LocationRepository(connectionString));
+        _member = new MemberService(memberRepo, memberTypeRepo);
     }
     /// <summary>
     /// Đối tượng cung cấp các chức năng nghiệp vụ liên quan đến tác giả.
@@ -49,5 +53,5 @@ public static class ServiceManager
     /// Đối tượng cung cấp các chức năng nghiệp vụ liên quan đến vị trí sách.
     /// </summary>
     public static LocationService Location => _location;
-
+    public static MemberService Member => _member;
 }

@@ -166,14 +166,16 @@
             // mniMemberType
             // 
             mniMemberType.Name = "mniMemberType";
-            mniMemberType.Size = new Size(165, 22);
+            mniMemberType.Size = new Size(180, 22);
             mniMemberType.Text = "Phân loại độc giả";
+            mniMemberType.Click += mniMemberType_Click;
             // 
             // mniMember
             // 
             mniMember.Name = "mniMember";
-            mniMember.Size = new Size(165, 22);
+            mniMember.Size = new Size(180, 22);
             mniMember.Text = "Hồ sơ độc giả";
+            mniMember.Click += mniMember_Click;
             // 
             // mniManageLoan
             // 

@@ -13,7 +13,7 @@ namespace SLib23T1020357.DesktopApp
             var child = this.MdiChildren.OfType<T>().FirstOrDefault();
             if (child != null)
             {
-                child.Activate(); 
+                child.Activate();
             }
             else
             {
@@ -47,6 +47,16 @@ namespace SLib23T1020357.DesktopApp
         private void mniLocation_Click(object sender, EventArgs e)
         {
             openIsMdiChild<Properties.DataDictionary.Locations.FormLocation>();
+        }
+
+        private void mniMemberType_Click(object sender, EventArgs e)
+        {
+            openIsMdiChild<Properties.Member.FormMemberType>();
+        }
+
+        private void mniMember_Click(object sender, EventArgs e)
+        {
+            openIsMdiChild<Properties.Member.FormMember>();
         }
     }
 }
